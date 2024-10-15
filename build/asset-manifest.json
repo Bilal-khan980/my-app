@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.415076fa.css",
-    "main.js": "/static/js/main.6769ec11.js",
-    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
-    "static/media/car4.jpg": "/static/media/car4.9d1b76bc55971afe1b8e.jpg",
-    "static/media/car1.jpg": "/static/media/car1.6635a5f16d5737bef116.jpg",
-    "static/media/car3.jpg": "/static/media/car3.3baf1a301aec7ed07a01.jpg",
-    "static/media/background.jpg": "/static/media/background.6968482cc15acb388172.jpg",
-    "static/media/car2.jpg": "/static/media/car2.64c32068b1a0ab2c2512.jpg",
-    "static/media/logox.png": "/static/media/logox.cc40012a0730183810f3.png",
-    "index.html": "/index.html",
-    "main.415076fa.css.map": "/static/css/main.415076fa.css.map",
-    "main.6769ec11.js.map": "/static/js/main.6769ec11.js.map",
-    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/autoverse/static/css/main.415076fa.css",
+    "main.js": "/autoverse/static/js/main.10022707.js",
+    "static/js/453.ed3810f9.chunk.js": "/autoverse/static/js/453.ed3810f9.chunk.js",
+    "static/media/car4.jpg": "/autoverse/static/media/car4.9d1b76bc55971afe1b8e.jpg",
+    "static/media/car1.jpg": "/autoverse/static/media/car1.6635a5f16d5737bef116.jpg",
+    "static/media/car3.jpg": "/autoverse/static/media/car3.3baf1a301aec7ed07a01.jpg",
+    "static/media/background.jpg": "/autoverse/static/media/background.6968482cc15acb388172.jpg",
+    "static/media/car2.jpg": "/autoverse/static/media/car2.64c32068b1a0ab2c2512.jpg",
+    "static/media/logox.png": "/autoverse/static/media/logox.cc40012a0730183810f3.png",
+    "index.html": "/autoverse/index.html",
+    "main.415076fa.css.map": "/autoverse/static/css/main.415076fa.css.map",
+    "main.10022707.js.map": "/autoverse/static/js/main.10022707.js.map",
+    "453.ed3810f9.chunk.js.map": "/autoverse/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.415076fa.css",
-    "static/js/main.6769ec11.js"
+    "static/js/main.10022707.js"
   ]
 }
