@@ -11,7 +11,7 @@ function Footer() {
                         <div className="col-md-3 col-sm-6 " style={{ backgroundColor: "black", textAlign: "center" }} >
                             <h4>CAN WE HELP YOU?</h4>
                             <p>SEND EMAIL</p>
-                            <p>CONTACTUS@WARDROBRIX.COM.PK</p>
+                            <p>CONTACTUS@Autoverse.COM.PK</p>
                             <p>UAN: 042 111-11-6387</p>
                             <p>MON-FRI 9:00 TO 5:30 PST</p>
                         </div>
@@ -25,7 +25,7 @@ function Footer() {
                             <p>EXCHANGE & RETURNS</p>
                         </div>
                         <div className="col-md-3 col-sm-6" style={{ backgroundColor: "black", textAlign: "center" }}>
-                            <h4>ABOUT WARDROBRIX</h4>
+                            <h4>ABOUT AUTOVERSE</h4>
                             <p>ABOUT US</p>
                             <p>RETAIL STORES</p>
                             <p>CONTACT US</p>
@@ -49,7 +49,7 @@ function Footer() {
             <hr style={{ color: "white" }}></hr>
             <div className="text-center bg-black py-2">
                 <p className="m-0 text-white">
-                    <i className="fa fa-regular fa-copyright"></i> 2024 , WARDROBRIX / TERMS AND CONDITIONS / PRIVACY POLICY
+                    <i className="fa fa-regular fa-copyright"></i> 2024 , AUTOVERSE / TERMS AND CONDITIONS / PRIVACY POLICY
                 </p>
             </div>
         </>

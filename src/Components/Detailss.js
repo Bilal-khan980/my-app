@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Footer from '../Components/footer.js';
 import Reviews from './Reviews.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import products from '../Components/CarProducts.js';
+import products from '../Components/BikeProducts.js';
 
  // Adjust the path if needed
 

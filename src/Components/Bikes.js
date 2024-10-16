@@ -47,7 +47,7 @@ class Used_Cars extends Component {
                                 <div className="product-details" style={{ padding: '15px' }}>
                                     <h3 style={{ color: '#fff' }}>{product.name}</h3>
                                     <p style={{ color: '#ccc' }}>{product.price}</p>
-                                    <Link to={`/products/${product.id}`} className="btn btn-secondary" style={{
+                                    <Link to={`/productss/${product.id}`} className="btn btn-secondary" style={{
                                         backgroundColor: 'black',
                                         color: '#fff',
                                         marginTop: '10px'

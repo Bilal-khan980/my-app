@@ -5,6 +5,8 @@ import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import Details from './Components/Details';
+
+import Detailss from './Components/Detailss.js';
 import Login from './Components/Login';
 import Navigationbar from './Components/Navigationbar';
 import Cart from './Components/Cart';
@@ -38,6 +40,7 @@ root.render(
           <Route path="/bikes" element={<Bikes />} />
 
           <Route path="/products/:id" element={<Details />} />
+          <Route path="/productss/:id" element={<Detailss />} />
           <Route path="/loginpage" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
           {/* <Route path='/account' element={<Admin />} /> */}
