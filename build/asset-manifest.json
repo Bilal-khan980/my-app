@@ -1,21 +1,27 @@
 {
   "files": {
-    "main.css": "/autoverse/static/css/main.415076fa.css",
-    "main.js": "/autoverse/static/js/main.10022707.js",
-    "static/js/453.ed3810f9.chunk.js": "/autoverse/static/js/453.ed3810f9.chunk.js",
-    "static/media/car4.jpg": "/autoverse/static/media/car4.9d1b76bc55971afe1b8e.jpg",
-    "static/media/car1.jpg": "/autoverse/static/media/car1.6635a5f16d5737bef116.jpg",
-    "static/media/car3.jpg": "/autoverse/static/media/car3.3baf1a301aec7ed07a01.jpg",
-    "static/media/background.jpg": "/autoverse/static/media/background.6968482cc15acb388172.jpg",
-    "static/media/car2.jpg": "/autoverse/static/media/car2.64c32068b1a0ab2c2512.jpg",
-    "static/media/logox.png": "/autoverse/static/media/logox.cc40012a0730183810f3.png",
-    "index.html": "/autoverse/index.html",
-    "main.415076fa.css.map": "/autoverse/static/css/main.415076fa.css.map",
-    "main.10022707.js.map": "/autoverse/static/js/main.10022707.js.map",
-    "453.ed3810f9.chunk.js.map": "/autoverse/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/static/css/main.415076fa.css",
+    "main.js": "/static/js/main.a8195a44.js",
+    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/Bike4.jpg": "/static/media/Bike4.c8e9c481f1284f03c5ff.jpg",
+    "static/media/Bike2.jpg": "/static/media/Bike2.e265ca55ceed2dfe30ad.jpg",
+    "static/media/Bike5.jpg": "/static/media/Bike5.a8b90fb0ec7b42fbb127.jpg",
+    "static/media/car4.jpg": "/static/media/car4.9d1b76bc55971afe1b8e.jpg",
+    "static/media/Bike3.jpg": "/static/media/Bike3.425de462d145f38b80d9.jpg",
+    "static/media/car1.jpg": "/static/media/car1.6635a5f16d5737bef116.jpg",
+    "static/media/Bike1.jpg": "/static/media/Bike1.7c8f17a71a23c94abe1c.jpg",
+    "static/media/car3.jpg": "/static/media/car3.3baf1a301aec7ed07a01.jpg",
+    "static/media/background.jpg": "/static/media/background.6968482cc15acb388172.jpg",
+    "static/media/car5.jpg": "/static/media/car5.bba8f38e82b0a956d9e2.jpg",
+    "static/media/car2.jpg": "/static/media/car2.64c32068b1a0ab2c2512.jpg",
+    "static/media/logox.png": "/static/media/logox.cc40012a0730183810f3.png",
+    "index.html": "/index.html",
+    "main.415076fa.css.map": "/static/css/main.415076fa.css.map",
+    "main.a8195a44.js.map": "/static/js/main.a8195a44.js.map",
+    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.415076fa.css",
-    "static/js/main.10022707.js"
+    "static/js/main.a8195a44.js"
   ]
 }

@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import logo from '../Assets/logox.png';
 
-
 function Navigationbar() {
     const location = useLocation();
 
@@ -23,10 +22,12 @@ function Navigationbar() {
         fontWeight: 'bold',
     };
 
+    const getLinkStyle = (path) => {
+        return location.pathname === path ? { ...linkStyle, ...activeLinkStyle } : linkStyle;
+    };
+
     return (
         <>
-            
-
             {/* Main Navigation Bar */}
             <Navbar bg="dark" variant="dark" expand="lg" style={{ height: 90, paddingLeft: "35px", zIndex: "1000" }}>
                 <Navbar.Brand as={Link} to="/">
@@ -37,58 +38,72 @@ function Navigationbar() {
                     <Nav className="mr-auto">
                         <Nav.Link 
                             as={Link} 
-                            to="/" 
-                            style={location.pathname === '/used-cars' ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+                            to="/usedcars" 
+                            style={getLinkStyle('/usedcars')}
                         >
                             Used Cars
                         </Nav.Link>
                         <Nav.Link 
                             as={Link} 
-                            to="/" 
-                            style={location.pathname === '/new-cars' ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+                            to="/newcars" 
+                            style={getLinkStyle('/newcars')}
                         >
                             New Cars
                         </Nav.Link>
                         <Nav.Link 
                             as={Link} 
-                            to="/" 
-                            style={location.pathname === '/bikes' ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+                            to="/bikes" 
+                            style={getLinkStyle('/bikes')}
                         >
                             Bikes
                         </Nav.Link>
-                        <Nav.Link 
+                        {/* <Nav.Link 
                             as={Link} 
                             to="/" 
-                            style={location.pathname === '/auto-store' ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+                            style={getLinkStyle('/auto-store')}
                         >
                             Auto Store
-                        </Nav.Link>
-                        <Nav.Link 
+                        </Nav.Link> */}
+                        {/* <Nav.Link 
                             as={Link} 
                             to="/" 
-                            style={location.pathname === '/videos' ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+                            style={getLinkStyle('/videos')}
                         >
                             Videos
-                        </Nav.Link>
-                        <Nav.Link 
+                        </Nav.Link> */}
+                        {/* <Nav.Link 
                             as={Link} 
                             to="/" 
-                            style={location.pathname === '/forums' ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+                            style={getLinkStyle('/forums')}
                         >
                             Forums
+                        </Nav.Link> */}
+                        {/* <Nav.Link 
+                            as={Link} 
+                            to="/" 
+                            style={getLinkStyle('/blog')}
+                        >
+                            Blog
+                        </Nav.Link> */}
+                        <Nav.Link 
+                            as={Link} 
+                            to="/about" 
+                            style={getLinkStyle('/blog')}
+                        >
+                            About Us
                         </Nav.Link>
                         <Nav.Link 
                             as={Link} 
-                            to="/" 
-                            style={location.pathname === '/blog' ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+                            to="/contact" 
+                            style={getLinkStyle('/blog')}
                         >
-                            Blog
+                            Contact Us
                         </Nav.Link>
                     </Nav>
 
                     <Nav className="ml-auto" style={{paddingLeft : '630px'}}>
                         {/* Post an Ad Button */}
-                        <Button style={{backgroundColor : 'grey' , border : '3px solid black' }} as={Link} to="/">
+                        <Button style={{backgroundColor : 'grey' , border : '3px solid black' }} as={Link} to="/postads">
                             Post an Ad
                         </Button>
                     </Nav>

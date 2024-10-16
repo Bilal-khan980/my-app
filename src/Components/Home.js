@@ -3,43 +3,14 @@ import { Link } from 'react-router-dom';
 import Footer from '../Components/footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import products from '../Components/CarProducts.js'; // Adjust the path if needed
+
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: [
-                {
-                    id: 1,
-                    name: "2021 Honda Civic",
-                    price: "$20,000",
-                    imageUrl: require('../Assets/car1.jpg')
-                },
-                {
-                    id: 2,
-                    name: "2020 Toyota Corolla",
-                    price: "$18,500",
-                    imageUrl: require('../Assets/car2.jpg')
-                },
-                {
-                    id: 3,
-                    name: "2019 Ford Mustang",
-                    price: "$25,000",
-                    imageUrl: require('../Assets/car3.jpg')
-                },
-                {
-                    id: 4,
-                    name: "2021 Tesla Model 3",
-                    price: "$35,000",
-                    imageUrl: require('../Assets/car4.jpg')
-                },
-                {
-                    id: 5,
-                    name: "2020 BMW 3 Series",
-                    price: "$30,000",
-                    imageUrl: require('../Assets/car1.jpg')
-                }
-            ],
+            products: products, // Use the imported products array
             error: null
         };
     }
