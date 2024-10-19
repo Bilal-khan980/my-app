@@ -1,4 +1,3 @@
-// src/Components/Cart.js
 
 import React, { useState } from 'react';
 import Footer from './footer';

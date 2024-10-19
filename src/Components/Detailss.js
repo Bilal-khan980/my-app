@@ -5,21 +5,20 @@ import Reviews from './Reviews.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import products from '../Components/BikeProducts.js';
 
- // Adjust the path if needed
 
 
 function Details() {
-    const { id } = useParams(); // Get the car ID from the URL
+    const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [error, setError] = useState('');
     const [checkinstock, setCheckInStock] = useState(false);
 
     useEffect(() => {
-        // Find the car by ID from the imported products array
+       
         const foundProduct = products.find(product => product.id === parseInt(id));
         if (foundProduct) {
             setProduct(foundProduct);
-            setCheckInStock(true); // Simulate that it's in stock
+            setCheckInStock(true);
         } else {
             setError('Car not found');
         }

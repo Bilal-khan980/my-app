@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,8 +7,20 @@ import logo from '../Assets/logox.png';
 
 function Navigationbar() {
     const location = useLocation();
+    const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    // Styles
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const linkStyle = {
         color: 'white',
         padding: '10px 15px',
@@ -26,20 +38,58 @@ function Navigationbar() {
         return location.pathname === path ? { ...linkStyle, ...activeLinkStyle } : linkStyle;
     };
 
+    const navbarStyle = {
+        height: 90,
+        paddingLeft: '35px',
+        zIndex: 1000,
+        transition: 'backdrop-filter 0.3s ease',
+    };
+
+    const navbarCollapseStyle = {
+        backdropFilter: isNavbarExpanded && windowWidth < 768 ? 'blur(8px)' : 'none', 
+        backgroundColor: isNavbarExpanded && windowWidth < 768 ? 'rgba(0, 0, 0, 0.7)' : 'transparent',
+        transition: 'backdrop-filter 0.3s ease, background-color 0.3s ease',
+    };
+
+    const logoStyle = {
+        height: windowWidth < 768 ? 60 : 150, 
+        transition: 'height 0.3s ease',
+    };
+
+    const handleLinkClick = () => {
+        if (windowWidth < 768) {
+            setIsNavbarExpanded(false); 
+        }
+    };
+
     return (
         <>
-            {/* Main Navigation Bar */}
-            <Navbar bg="dark" variant="dark" expand="lg" style={{ height: 90, paddingLeft: "35px", zIndex: "1000" }}>
+            <Navbar
+                bg="dark"
+                variant="dark"
+                expand="lg"
+                style={navbarStyle}
+                expanded={isNavbarExpanded}
+                onToggle={(expanded) => setIsNavbarExpanded(expanded)}
+            >
                 <Navbar.Brand as={Link} to="/">
-                    <img src={logo} height={150} alt="Logo" />
+                    <img
+                        src={logo}
+                        style={logoStyle}
+                        alt="Logo"
+                    />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse
+                    id="basic-navbar-nav"
+                    style={navbarCollapseStyle}
+                >
                     <Nav className="mr-auto">
                         <Nav.Link 
                             as={Link} 
                             to="/usedcars" 
                             style={getLinkStyle('/usedcars')}
+                            onClick={handleLinkClick}
                         >
                             Used Cars
                         </Nav.Link>
@@ -47,6 +97,7 @@ function Navigationbar() {
                             as={Link} 
                             to="/newcars" 
                             style={getLinkStyle('/newcars')}
+                            onClick={handleLinkClick} 
                         >
                             New Cars
                         </Nav.Link>
@@ -54,56 +105,43 @@ function Navigationbar() {
                             as={Link} 
                             to="/bikes" 
                             style={getLinkStyle('/bikes')}
+                            onClick={handleLinkClick} 
                         >
                             Bikes
                         </Nav.Link>
-                        {/* <Nav.Link 
-                            as={Link} 
-                            to="/" 
-                            style={getLinkStyle('/auto-store')}
-                        >
-                            Auto Store
-                        </Nav.Link> */}
-                        {/* <Nav.Link 
-                            as={Link} 
-                            to="/" 
-                            style={getLinkStyle('/videos')}
-                        >
-                            Videos
-                        </Nav.Link> */}
-                        {/* <Nav.Link 
-                            as={Link} 
-                            to="/" 
-                            style={getLinkStyle('/forums')}
-                        >
-                            Forums
-                        </Nav.Link> */}
-                        {/* <Nav.Link 
-                            as={Link} 
-                            to="/" 
-                            style={getLinkStyle('/blog')}
-                        >
-                            Blog
-                        </Nav.Link> */}
                         <Nav.Link 
                             as={Link} 
                             to="/about" 
-                            style={getLinkStyle('/blog')}
+                            style={getLinkStyle('/about')}
+                            onClick={handleLinkClick} 
                         >
                             About Us
                         </Nav.Link>
                         <Nav.Link 
                             as={Link} 
                             to="/contact" 
-                            style={getLinkStyle('/blog')}
+                            style={getLinkStyle('/contact')}
+                            onClick={handleLinkClick}    
                         >
                             Contact Us
                         </Nav.Link>
+                        <Nav.Link 
+                            as={Link} 
+                            to="/loginpage" 
+                            style={getLinkStyle('/contact')}
+                            onClick={handleLinkClick}    
+                        >
+                            Login/Register
+                        </Nav.Link>
                     </Nav>
 
-                    <Nav className="ml-auto" style={{paddingLeft : '630px'}}>
-                        {/* Post an Ad Button */}
-                        <Button style={{backgroundColor : 'grey' , border : '3px solid black' }} as={Link} to="/postads">
+                    <Nav className="ml-auto">
+                        <Button
+                            style={{ backgroundColor: 'grey', border: '3px solid black', margin: '10px 0' }}
+                            as={Link}
+                            to="/postads"
+                            onClick={handleLinkClick}    
+                        >
                             Post an Ad
                         </Button>
                     </Nav>

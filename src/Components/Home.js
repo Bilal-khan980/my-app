@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 import Footer from '../Components/footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import products from '../Components/CarProducts.js'; // Adjust the path if needed
-
+import products from '../Components/CarProducts.js';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: products, // Use the imported products array
+            products: products, 
             error: null
         };
     }
@@ -30,29 +29,27 @@ class Home extends React.Component {
                 backgroundPosition: 'center',
                 height: '88vh',
                 width: '100%',
-                position: 'relative', // Position relative to make overlay work
+                position: 'relative', 
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'white'
             }}>
-                {/* Black overlay */}
                 <div style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Adjust the opacity for the desired darkness
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)', 
                     zIndex: 1
                 }}></div>
         
-                {/* Content inside the hero */}
                 <div className="search-box" style={{
                     padding: '20px',
                     borderRadius: '10px',
                     textAlign: 'center',
-                    zIndex: 2 // Ensures content is above the overlay
+                    zIndex: 2
                 }}>
                     <h1>Find Used Cars in Pakistan</h1>
                     <p>With thousands of cars, we have just the right one for you</p>

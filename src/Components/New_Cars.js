@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'; // Assuming you are using react-router-dom for routing
+import { Link } from 'react-router-dom'; 
 import Footer from './footer';
-import products from '../Components/CarProducts'; // Adjust the path if needed
+import products from '../Components/CarProducts';
 
 
 class Used_Cars extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: products, // Use the imported products array
+            products: products,
             error: null
         };
     }

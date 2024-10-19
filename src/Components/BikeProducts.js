@@ -1,4 +1,3 @@
-// BikeProducts.js
 const products = [
     {
         id: 1,

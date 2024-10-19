@@ -1,13 +1,11 @@
 import React, {  useState } from 'react';
-import Footer from './footer'; // Assuming you have a Footer component
+import Footer from './footer'; 
 import { Link } from 'react-router-dom'
 
 function Checkout() {
   const [cartItems, ] = useState([]);
   const [error, ] = useState('');
 
-
-  // Calculate delivery date (5 days from today)
   const getDeliveryDate = () => {
     const today = new Date();
     const deliveryDate = new Date(today);
@@ -22,7 +20,6 @@ function Checkout() {
   }
 
 
-  // Placeholder for when cart items are loading
   if (cartItems.length === 0) {
     return <div>Loading cart items...</div>;
   }

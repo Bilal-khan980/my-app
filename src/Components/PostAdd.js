@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class AddCarForm extends Component {
     state = {
@@ -19,7 +20,6 @@ class AddCarForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically send this data to the backend
         alert('Car advertisement submitted successfully!');
         this.setState({
             make: '',
@@ -37,52 +37,49 @@ class AddCarForm extends Component {
         const { make, model, year, price, mileage, imageUrl, description, features } = this.state;
 
         return (
-            <div style={{ backgroundColor: 'black', color: 'yellow', padding: '40px', height : '100vh' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Post An Ad</h2>
-                <form onSubmit={this.handleSubmit} style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '20px' }}>
-                        <div style={{ flex: '1', minWidth: '300px' }}>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="make" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Car Make</label>
-                                <input type="text" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="make" value={make} onChange={this.handleChange} />
+            <div style={{ backgroundColor: 'black', color: 'yellow', height: '100%' }}>
+                <div className="container-fluid d-flex align-items-center justify-content-center">
+                    <div className="card p-4" style={{ width: "500px", backgroundColor: "black", color: "white", border: "none", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
+                        <h2 className="text-center mb-4" style={{ color: "#fff", fontWeight: "bold", fontSize: "50px" }}>Post An Ad</h2>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="row">
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="make" className="form-label" style={{ color: 'yellow' }}>Car Make</label>
+                                    <input type="text" className="form-control" name="make" value={make} onChange={this.handleChange} required />
+                                </div>
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="model" className="form-label" style={{ color: 'yellow' }}>Car Model</label>
+                                    <input type="text" className="form-control" name="model" value={model} onChange={this.handleChange} required />
+                                </div>
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="year" className="form-label" style={{ color: 'yellow' }}>Year</label>
+                                    <input type="number" className="form-control" name="year" value={year} onChange={this.handleChange} required />
+                                </div>
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="price" className="form-label" style={{ color: 'yellow' }}>Price ($)</label>
+                                    <input type="number" className="form-control" name="price" value={price} onChange={this.handleChange} required />
+                                </div>
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="mileage" className="form-label" style={{ color: 'yellow' }}>Mileage (in miles)</label>
+                                    <input type="number" className="form-control" name="mileage" value={mileage} onChange={this.handleChange} required />
+                                </div>
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="imageUrl" className="form-label" style={{ color: 'yellow' }}>Image URL</label>
+                                    <input type="text" className="form-control" name="imageUrl" value={imageUrl} onChange={this.handleChange} required />
+                                </div>
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="description" className="form-label" style={{ color: 'yellow' }}>Description</label>
+                                    <textarea className="form-control" name="description" value={description} onChange={this.handleChange} rows="4" required></textarea>
+                                </div>
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="features" className="form-label" style={{ color: 'yellow' }}>Features (comma-separated)</label>
+                                    <input type="text" className="form-control" name="features" value={features} onChange={this.handleChange} required />
+                                </div>
                             </div>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="model" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Car Model</label>
-                                <input type="text" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="model" value={model} onChange={this.handleChange} />
-                            </div>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="year" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Year</label>
-                                <input type="number" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="year" value={year} onChange={this.handleChange} />
-                            </div>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="price" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Price ($)</label>
-                                <input type="number" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="price" value={price} onChange={this.handleChange} />
-                            </div>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="mileage" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Mileage (in miles)</label>
-                                <input type="number" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="mileage" value={mileage} onChange={this.handleChange} />
-                            </div>
-                        </div>
-                        <div style={{ flex: '1', minWidth: '300px' }}>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="imageUrl" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Image URL</label>
-                                <input type="text" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="imageUrl" value={imageUrl} onChange={this.handleChange} />
-                            </div>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="description" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Description</label>
-                                <textarea style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="description" value={description} onChange={this.handleChange} rows="4"></textarea>
-                            </div>
-                            <div style={{ marginBottom: '15px' }}>
-                                <label htmlFor="features" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Features (comma-separated)</label>
-                                <input type="text" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid yellow' }} name="features" value={features} onChange={this.handleChange} />
-                            </div>
-                            {/* Center the button within its container */}
-                            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                                <button type="submit" style={{ width: '50%', backgroundColor: 'yellow', border: 'none', borderRadius: '4px', color: 'black', fontSize: '16px', padding: '10px' }}>Post Advertisement</button>
-                            </div>
-                        </div>
+                            <button type="submit" className="btn btn-warning btn-block">Post Advertisement</button>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         );
     }

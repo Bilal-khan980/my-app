@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'; // Assuming you are using react-router-dom for routing
+import { Link } from 'react-router-dom';
 import Footer from './footer';
-import products from '../Components/BikeProducts.js'; // Import the products array
+import products from '../Components/BikeProducts.js'; 
 
 
 class Used_Cars extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products, // Use the imported products array directly
+            products, 
             error: null
         };
     }
@@ -23,7 +23,7 @@ class Used_Cars extends Component {
                 <h1 style={{ textAlign: "center", fontWeight: "bold", color: "yellow", paddingTop: "40px" }}>BIKES</h1>
                 <section className="featured-products">
                 <div className="container-fluid" style={{ paddingTop: "40px", width: "100%" }}>
-                    {/* <h2 style={{ color: "yellow" }}>FEATURED PRODUCTS</h2> */}
+                   
                     <div className="product-list" style={{
                         display: 'flex',
                         flexWrap: 'wrap',
