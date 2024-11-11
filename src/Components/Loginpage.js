@@ -1,10 +1,33 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 function Login({ setIsRegister, setIsForgotPassword }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [showAlert] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+    const navigate = useNavigate(); // Replace useHistory with useNavigate
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:5000/api/users/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                localStorage.setItem('userEmail', email);
+                navigate('/'); // Use navigate instead of history.push
+            } else {
+                setShowAlert(true);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
     return (
         <div className="d-flex align-items-center justify-content-center" style={{ backgroundColor: "#1a1a1a", minHeight: "100vh", overflow: "hidden" }}>
@@ -13,7 +36,7 @@ function Login({ setIsRegister, setIsForgotPassword }) {
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <div className="card p-5" style={{ backgroundColor: "#282828", color: "white", border: "none", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)" }}>
                             <h2 className="text-center mb-4" style={{ fontWeight: "bold", fontSize: "36px", color: "#ffcc00" }}>Login</h2>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className="form-group mb-4">
                                     <label htmlFor="email" className="form-label" style={{ fontWeight: "bold", color: "#ffcc00" }}>Email</label>
                                     <input

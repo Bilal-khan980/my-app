@@ -7,7 +7,34 @@ function Register() {
     const [username, setUsername] = useState("");
     const [address, setAddress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-    const [showAlert] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:5000/api/users/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password, username, address, phoneNumber }),
+            });
+            
+            const data = await response.json();
+            if (response.ok) {
+                alert(data.message);
+                setEmail("");
+                setPassword("");
+                setUsername("");
+                setAddress("");
+                setPhoneNumber("");
+                setShowAlert(false);
+            } else {
+                setShowAlert(true);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
     return (
         <div className="d-flex align-items-center justify-content-center" style={{ backgroundColor: "#1a1a1a", minHeight: "100vh", overflow: "hidden" }}>
@@ -16,7 +43,7 @@ function Register() {
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <div className="card p-5" style={{ backgroundColor: "#282828", color: "white", border: "none", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)" }}>
                             <h2 className="text-center mb-4" style={{ fontWeight: "bold", fontSize: "36px", color: "#ffcc00" }}>Register</h2>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className="form-group mb-4">
                                     <label htmlFor="username" className="form-label" style={{ fontWeight: "bold", color: "#ffcc00" }}>Username</label>
                                     <input
@@ -85,7 +112,7 @@ function Register() {
                                 <button type="submit" className="btn btn-warning w-100 mb-3" style={{ borderRadius: "5px" }}>Register</button>
                                 <div className="text-center">
                                     <span>Already have an account? </span>
-                                    <button type="button" className="btn btn-link text-warning p-0" >Login</button>
+                                    <button type="button" className="btn btn-link text-warning p-0">Login</button>
                                 </div>
                             </form>
                             {showAlert && (
